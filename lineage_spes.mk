@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/spes/device.mk)
 
 # Inherit some common PixelOS stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Additions
 $(call inherit-product-if-exists, vendor/gapps/common.mk)
@@ -24,8 +24,16 @@ $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
+# Maintainer name for Everest
+EVEREST_MAINTAINER := "justkelvin"
+TARGET_SUPPORTS_BLUR := true
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
+WITH_GAPPS := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+
 # Product Specifics
-PRODUCT_NAME := aosp_spes
+PRODUCT_NAME := lineage_spes
 PRODUCT_DEVICE := spes
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 11
