@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/spes/device.mk)
 
 # Inherit some common PixelOS stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/blaze/config/common_full_phone.mk)
 
 # Additions
 $(call inherit-product-if-exists, vendor/gapps/common.mk)
@@ -21,11 +21,16 @@ $(call inherit-product-if-exists, vendor/prebuilt-apps/config.mk)
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
 
+# ProjectBlaze
+BLAZE_BUILD_TYPE := UNOFFICIAL
+BLAZE_MAINTAINER := justkelvin
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Product Specifics
-PRODUCT_NAME := aosp_spes
+PRODUCT_NAME := blaze_spes
 PRODUCT_DEVICE := spes
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 11
